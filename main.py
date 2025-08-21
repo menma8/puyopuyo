@@ -85,7 +85,7 @@ def time_to_frame(minutes: int, seconds: float, fps: int = 30) -> int:
     return frame_number
 
 #色の変化を検出（差は+-10）
-def check_color_change(frame, x, y, prev_color, tolerance=10):
+def check_color_change(frame, x, y, prev_color, tolerance=30):
     """
     指定座標の色が前回の色と異なるかを判定する。
     RGBそれぞれに対し±toleranceの誤差を許容。
@@ -126,7 +126,7 @@ def scan_field(img):
     colors = {
         'ozyama':([200,200,200],[230,230,230]),
         'green': ([0, 200, 0], [160, 255, 180]),
-        'yellow': ([0, 190, 100], [150, 255, 255]),
+        'yellow': ([0, 190, 100], [155, 255, 255]),
         'red': ([0, 0, 170], [220, 220, 255]),
         'blue': ([100, 0, 0], [255, 190, 130]),
         'purple': ([80, 0, 90], [255, 210, 255]),
@@ -207,7 +207,7 @@ def scan_field(img):
             # cv2.circle(img, (center_x, center_y1), 5, (0, 0, 255), -1)  # 上の点
             # cv2.circle(img, (center_x, center_y2), 5, (0, 0, 255), -1)  # 下の点
 
-    # 平均色のRGB値を表示
+    # # 平均色のRGB値を表示
     # print("\n平均色のRGB値:")
     # for row in average_colors:
     #     print(row)
@@ -404,12 +404,12 @@ def puyo_simulation(initial_board):
 #同一ディレクトリの中に入れてね
 file_path = "参考動画.mp4"
 #コマを送るスピードの遅延値
-delay = 24
+delay = 30
 window_name = "open_cv"
 cap = cv2.VideoCapture(file_path)
 
 trigger_flag = False
-color_check_position = (522, 135)
+color_check_position = (516, 122)
 previous_color = None
 
 
