@@ -500,9 +500,9 @@ while True:
             # cv2.imshow("Cropped Frame", cropped_frame)
 
             # 必要なら画像を保存
-            cut_field = f"cut_field_{now_frame}.png"
-            cv2.imwrite(cut_field, cropped_frame)
-            print(f"Saved cropped frame to {cut_field}")
+            # cut_field = f"cut_field_{now_frame}.png"
+            # cv2.imwrite(cut_field, cropped_frame)
+            # print(f"Saved cropped frame to {cut_field}")
 
             cropped_frame = frame[y1:y2, x1:x2]
 
